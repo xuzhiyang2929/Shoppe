@@ -1,0 +1,23 @@
+.mall-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 22rpx;
+}
+
+.mall-img {
+  width: 200rpx;
+  height: 270rpx;
+  padding-bottom: 20rpx;
+}
+
+.mall-title{
+    margin-bottom: 16rpx;
+    font-size: 24rpx;
+}
+
+.mall-discount{
+    margin-bottom: 16rpx;
+    font-size: 26rpx;
+    color: red;
+    text-align: right;
+}

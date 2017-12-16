@@ -1,0 +1,2 @@
+<import src="../mall-grid/mall-grid-template.wxml" />
+<template is="mallGridTemplate" data="{{malls}}" />

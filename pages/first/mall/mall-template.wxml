@@ -1,0 +1,8 @@
+<template name="mallTemplate">
+    <view class="mall-container" catchtap="onMallTap" data-movieId="{{mallId}}">
+        <image class="mall-img" src="/images/mall/xingbai.jpg"></image>
+        <text class="mall-title">南京新百</text>
+        <text class="mall-discount">7折起</text>
+        <!-- <template is="starsTemplate" data="{{stars:stars, score: average}}" /> -->
+    </view>
+</template>

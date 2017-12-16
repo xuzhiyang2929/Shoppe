@@ -1,0 +1,10 @@
+<import src="../mall/mall-template.wxml" />
+<template name="mallGridTemplate">
+  <scroll-view class="grid-container" scroll-y="true" scroll-x="false" bindscrolltolower="onScrollLower">
+    <block wx:for="{{malls}}" wx:for-item="mall">
+      <view class="single-view-container">
+        <template is="mallTemplate" data="{{...mall}}" />
+      </view>
+    </block>
+  </scroll-view>
+</template>
