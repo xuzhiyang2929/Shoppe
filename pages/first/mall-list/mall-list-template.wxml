@@ -3,18 +3,18 @@
   <view class="mall-list-container">
     <view class="inner-container">
       <view class="mall-head">
-        <text class="slogan">正在热映</text>
-        <view catchtap="onMoreTap" class="more">
+        <text class="slogan">{{categoryTitle}}</text>
+        <view catchtap="onMoreTap" class="more" data-category="{{categoryTitle}}">
           <text class="more-text">更多</text>
           <image class="more-img" src="/images/icon/arrow-right.png"></image>
         </view>
       </view>
       <view class="malls-container">
-        <block>
-          <template is="mallTemplate" />
+        <block wx:for="{{malls}}" wx:for-item="mall">
+          <template is="mallTemplate" data="{{...mall}}"/>
         </block>
-        <template is="mallTemplate" />
-        <template is="mallTemplate" />
+        <!-- <template is="mallTemplate" />
+        <template is="mallTemplate" /> -->
       </view>
     </view>
   </view>

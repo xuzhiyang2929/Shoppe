@@ -1,6 +1,6 @@
 
 <view class="container">
-  <image class="head-img" src="/images/mall/xingbai.jpg" mode="aspectFill" />
+  <image class="head-img" src="{{mall.movieImg}}" mode="aspectFill" />
   <view class="head-img-hover" data-src="/images/mall/xingbai.jpg" catchtap="viewMoviePostImg">
     <text class="main-title">南京新百</text>
     <text class="sub-title">1969 南京</text>

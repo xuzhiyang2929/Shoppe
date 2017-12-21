@@ -30,12 +30,6 @@
         "selectedIconPath": "images/tab/second-on.png"
       },
       {
-        "pagePath": "pages/third/index",
-        "text": "收藏",
-        "iconPath": "images/tab/third-over.png",
-        "selectedIconPath": "images/tab/third-on.png"
-      },
-      {
         "pagePath": "pages/fourth/index",
         "text": "我",
         "iconPath": "images/tab/fourth-over.png",

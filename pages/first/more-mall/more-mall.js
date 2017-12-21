@@ -1,6 +1,6 @@
 // pages/movies/more-movie/more-movie.js
-var app = getApp();
-var util = require('../../../utils/util.js');
+var app = getApp()
+var util = require('../../../utils/util.js')
 Page({
   data: {
     malls: {},
@@ -10,11 +10,9 @@ Page({
     isEmpty: true,
   },
   onLoad: function (options) {
-    var category = "正在热映";
-    //options.category;
+    var category = options.category;
     this.data.navigateTitle = category;
     var dataUrl = "";
-
     switch (category) {
       case "正在热映":
         dataUrl = app.globalData.doubanBase +
@@ -95,7 +93,7 @@ Page({
     })
   },
 
-  onMallTap: function (event) {
+  onMovieTap: function (event) {
     var movieId = event.currentTarget.dataset.movieid;
     wx.navigateTo({
       url: '../mall-detail/mall-detail?id=' + movieId

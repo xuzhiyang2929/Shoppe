@@ -14,26 +14,26 @@ Page({
   },
 
   onLoad: function (event) {
-    // var inTheatersUrl = app.globalData.doubanBase +
-    //   "/v2/movie/in_theaters" + "?start=0&count=3";
-    // var comingSoonUrl = app.globalData.doubanBase +
-    //   "/v2/movie/coming_soon" + "?start=0&count=3";
-    // var top250Url = app.globalData.doubanBase +
-    //   "/v2/movie/top250" + "?start=0&count=3";
+    var inTheatersUrl = app.globalData.doubanBase +
+      "/v2/movie/in_theaters" + "?start=0&count=3";
+    var comingSoonUrl = app.globalData.doubanBase +
+      "/v2/movie/coming_soon" + "?start=0&count=3";
+    var top250Url = app.globalData.doubanBase +
+      "/v2/movie/top250" + "?start=0&count=3";
 
-    // this.getMovieListData(inTheatersUrl, "inTheaters", "正在热映");
-    // this.getMovieListData(comingSoonUrl, "comingSoon", "即将上映");
-    // this.getMovieListData(top250Url, "top250", "豆瓣Top250");
-  wx.request({
-    url: 'https://api.douban.com/v2/movie/top250',
-    method:'GET',
-    header: {
-      'content-type': 'json' // 默认值
-    },
-    success: function(res){
-      console.log(res);
-    }
-  });
+    this.getMovieListData(inTheatersUrl, "inTheaters", "正在热映");
+    this.getMovieListData(comingSoonUrl, "comingSoon", "即将上映");
+    this.getMovieListData(top250Url, "top250", "豆瓣Top250");
+  // wx.request({
+  //   url: 'https://api.douban.com/v2/movie/top250',
+  //   method:'GET',
+  //   header: {
+  //     'content-type': 'json' // 默认值
+  //   },
+  //   success: function(res){
+  //     console.log(res);
+  //   }
+  // });
 
   },
 
@@ -45,9 +45,9 @@ Page({
   },
 
   onMallTap: function (event) {
-    //var movieId = event.currentTarget.dataset.movieid;
+    var mallId = event.currentTarget.dataset.mallId;
     wx.navigateTo({
-      url: "mall-detail/mall-detail?id=" + 1
+      url: "mall-detail/mall-detail?id=" + mallId
     })
   },
 
@@ -71,9 +71,9 @@ Page({
 
   onCancelImgTap: function (event) {
     this.setData({
-      containerShow: true,
       searchPanelShow: false,
-      searchResult: {}
+      containerShow: true
+      // searchResult: {}
     }
     )
   },
@@ -86,9 +86,13 @@ Page({
   },
 
   onBindBlur: function (event) {
-    var text = event.detail.value;
-    var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text;
-    this.getMovieListData(searchUrl, "searchResult", "");
+    // var text = event.detail.value;
+    // var searchUrl = app.globalData.doubanBase + "/v2/movie/search?q=" + text;
+    // this.getMovieListData(searchUrl, "searchResult", "");
+  },
+
+  onClearTap: function (event) {
+
   },
 
   processDoubanData: function (moviesDouban, settedKey, categoryTitle) {
@@ -105,14 +109,14 @@ Page({
         title: title,
         average: subject.rating.average,
         coverageUrl: subject.images.large,
-        movieId: subject.id
+        mallId: subject.id
       }
       movies.push(temp)
     }
     var readyData = {};
     readyData[settedKey] = {
       categoryTitle: categoryTitle,
-      movies: movies
+      malls: movies
     }
     this.setData(readyData);
   }

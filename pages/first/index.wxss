@@ -44,3 +44,8 @@
     width: 30rpx;
     margin:auto 0 auto 10rpx;
 }
+.xx-clear{
+  height: 15rpx;
+  width: 15rpx;
+  margin: 15rpx 0 auto -25rpx;
+}

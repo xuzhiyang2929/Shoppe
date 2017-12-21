@@ -5,17 +5,18 @@
   <icon type="search" class="search-img" size="13" color="#405f80"></icon>
   <input type="text" placeholder="德基、万达" 
   placeholder-class="placeholder" bindfocus="onBindFocus" bindblur="onBindBlur"/>
-  <image src="/images/icon/xx.png" class="xx-img" bindtap="onCancelImgTap"></image>
+  <!-- <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" bindtap="onCancelImgTap"></image> -->
+  <icon wx:if="{{searchPanelShow}}" type='clear' class="xx-clear" bindtap="onClearTap"></icon>
 </view>
-<view class="container">
+<view class="container" wx:if="{{containerShow}}">
   <view class="malls-template">
-    <template is="mallListTemplate"  />
+    <template is="mallListTemplate" data="{{...inTheaters}}" />
   </view>
   <view class="malls-template">
-    <template is="mallListTemplate" />
+    <template is="mallListTemplate" data="{{...comingSoon}}" />
   </view>
   <view class="malls-template">
-    <template is="mallListTemplate" />
+    <template is="mallListTemplate" data="{{...top250}}" />
     <!-- <template is="mallListTemplate" data="{{...top250}}"/> -->
   </view>
 </view>
